@@ -4,7 +4,7 @@ import java.util.List;
 
 
 import com.bruce.designer.admin.bean.security.AdminRole;
-import com.bruce.baseService.IBaseService;
+import com.bruce.baseSkeleton.service.IBaseService;
 
 public interface AdminRoleService extends IBaseService<AdminRole, Integer>{
 

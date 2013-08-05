@@ -3,7 +3,7 @@ package com.bruce.designer.admin.service;
 import java.util.List;
 
 import com.bruce.designer.admin.bean.security.AdminUser;
-import com.bruce.baseService.IBaseService;
+import com.bruce.baseSkeleton.service.IBaseService;
 
 public interface AdminUserService extends IBaseService<AdminUser, Integer> {
 

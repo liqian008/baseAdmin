@@ -4,7 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.bruce.baseService.IBaseService;
+import com.bruce.baseSkeleton.service.IBaseService;
 import com.bruce.designer.admin.bean.security.AdminResource;
 
 public interface AdminResourceService extends IBaseService<AdminResource, Integer>{
