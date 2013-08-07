@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="com.bruce.designer.admin.bean.security.AdminResource"%>
+<%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%>
 
 <%@ include file="../inc/include_tag.jsp" %>
 

@@ -21,12 +21,12 @@
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
 			connectionURL="jdbc:mysql://localhost:3306/security" userId="root"
 			password="" />
-		<javaModelGenerator targetPackage="com.bruce.designer.admin.bean.security"
-			targetProject="designer-admin"/>
-		<sqlMapGenerator targetPackage="com.bruce.designer.admin.bean.mapper.security"
-			targetProject="designer-admin" />
-		<javaClientGenerator targetPackage="com.bruce.designer.admin.dao.security"
-			targetProject="designer-admin" type="XMLMAPPER">
+		<javaModelGenerator targetPackage="com.bruce.baseAdmin.bean.security"
+			targetProject="baseAdmin"/>
+		<sqlMapGenerator targetPackage="com.bruce.baseAdmin.bean.mapper.security"
+			targetProject="baseAdmin" />
+		<javaClientGenerator targetPackage="com.bruce.baseAdmin.dao.security"
+			targetProject="baseAdmin" type="XMLMAPPER">
 			<property name="enableSubPackages" value="false"/>
 		</javaClientGenerator>
 		

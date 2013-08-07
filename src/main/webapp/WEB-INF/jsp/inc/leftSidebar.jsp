@@ -1,13 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.bruce.designer.admin.bean.security.AdminResource"%> 
+<%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%> 
 
 
 <%!
 public String liActive(String servletPath, String resourceUrl){
-	System.err.println("====="+servletPath+"===="+resourceUrl);
-	System.err.println(servletPath.contains(resourceUrl));
+	//System.err.println("====="+servletPath+"===="+resourceUrl);
+	//System.err.println(servletPath.contains(resourceUrl));
     if(servletPath!=null&&servletPath.contains(resourceUrl)){
          return " class='active'";
      }
@@ -15,7 +16,9 @@ public String liActive(String servletPath, String resourceUrl){
 }
 
 public String isCurrentSubmenu(String servletPath, String resourceUrl){
-    if(servletPath!=null&&servletPath.contains("/designer-admin"+resourceUrl)){
+  	System.err.println("====="+servletPath+"===="+resourceUrl);
+  	System.err.println(servletPath.contains(resourceUrl));
+    if(servletPath!=null&&servletPath.contains("/baseAdmin"+resourceUrl)){
          return " class='current'";
      }
     return "";
@@ -42,7 +45,7 @@ if(navResourceList==null){
 	        <!-- Sidebar user -->
 	        <div class="sidebar-user widget">
 				<div class="navbar"><div class="navbar-inner"><h6>欢迎登录!</h6></div></div>
-	            <a href="index.html#" title="" class="user"><img src="/designer-admin/img/demo/sidebar_user_big.png" alt="" /></a>
+	            <a href="index.html#" title="" class="user"><img src="<s:url value='/img/demo/sidebar_user_big.png'/>" alt="" /></a>
 	        </div>
 	        <!-- /sidebar user -->
 			
@@ -58,7 +61,7 @@ if(navResourceList==null){
 	                	<%
 			             for(AdminResource childResource : resource.getChildResources()){
 			            %>
-	                    <li><a href="/designer-admin/<%=childResource.getUrl()%>" <%=isCurrentSubmenu(servletPath, childResource.getUrl())%> title="<%=childResource.getResourceName()%>"><%=childResource.getResourceName()%></a></li>
+	                    <li><a href="<s:url value='<%=childResource.getUrl()%>'/>" <%=isCurrentSubmenu(servletPath, childResource.getUrl())%> title="<%=childResource.getResourceName()%>"><%=childResource.getResourceName()%></a></li>
 	                    <%}%>
 	                </ul> 
 	            </li>

@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="com.bruce.designer.admin.bean.security.AdminRole"%>
+<%@page import="com.bruce.baseAdmin.bean.security.AdminRole"%>
 
 <%
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
