@@ -1,6 +1,6 @@
 使用spring security编写，作为admin后台管理服务的基础war包
 
-html页面来自：demo.kopyov.com/pannonia/index.html
+html页面来自：http://demo.kopyov.com/pannonia/index.html
 
 mvn依赖为：
 
