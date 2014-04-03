@@ -105,6 +105,9 @@ public class AdminResourceController extends BaseController {
 		
 		//刷新菜单资源
 		//adminResourceService.reloadResourcesForUser(request);
+		//获取导航栏数据
+        List<AdminResource> navResourceList = adminResourceService.getNavResources();
+        request.getSession().setAttribute("navResourceList", navResourceList);
 		return "forward:/home/operationRedirect";
 	}
 	

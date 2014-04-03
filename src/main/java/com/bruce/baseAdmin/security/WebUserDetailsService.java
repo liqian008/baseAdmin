@@ -26,10 +26,7 @@ import com.bruce.baseAdmin.utils.ConstantsUtil;
 
 /**
  * 实现 UserDetailsService 接口，主要是在 loadUserByUsername 方法中验证一个用户
- * 
  * 这里需要从数据库中读取验证表单提交过来的用户
- * 
- * @author Taven.Li
  *
  */
 @Service 
@@ -60,7 +57,6 @@ public class WebUserDetailsService implements UserDetailsService {
 		String password = adminUser.getPassword();
 		boolean userEnabled = adminUser.getStatus() == 1;
 		
-		
 		//读取当前用户有哪些角色权限
 		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
 //		Set<AdminRole> userRoles = userEntity.getRoles();
@@ -74,11 +70,10 @@ public class WebUserDetailsService implements UserDetailsService {
 			} 
 		}
 		
-		//这里是把超级用户名写死的，也可以把它实现可配置化
 		//如果是超级用户，则添加超级用户的授权
-		if(username.equals("admin")){
-			//ROLE_SUPER 这个权限名字也是自己定义的 
-			authorities.add(new SimpleGrantedAuthority("ROLE_SUPER"));
+		if(username.equals("admin")){//这里是把超级用户名写死的，也可以把它实现可配置化
+			//ROLE_SUPER 这个权限名字也是自己定义的
+			authorities.add(new SimpleGrantedAuthority(ConstantsUtil.SECURITY_AUTHORITY_PREFIX + "SUPER"));
 		}
 		
 		//创建 UserDetails 对象
@@ -86,5 +81,4 @@ public class WebUserDetailsService implements UserDetailsService {
 		return webUserDetails;
 		
 	}
-
 }

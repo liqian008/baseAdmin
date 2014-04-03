@@ -13,7 +13,7 @@
 	
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.bruce.baseAdmin"></context:component-scan>
+	<context:component-scan base-package="com.bruce"></context:component-scan>
 
 	<!-- 使用国际化消息 -->  
    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">   

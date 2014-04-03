@@ -38,6 +38,7 @@ public class HomeController extends BaseController{
         
 //      adminResourceService.reloadResourcesForUser(request);
         
+		//获取导航栏数据
         List<AdminResource> navResourceList = adminResourceService.getNavResources();
         request.getSession().setAttribute("navResourceList", navResourceList);
         

@@ -25,6 +25,7 @@
     <http pattern="/js/**" security="none"/>
     <http pattern="/index.*" security="none"/>
     <http pattern="/login**/**" security="none"/>
+    <http pattern="/designer" security="none"/>
     <http pattern="/getVerifyCode" security="none"/>
     <http pattern="/help" security="none"/>
 
