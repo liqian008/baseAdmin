@@ -10,7 +10,9 @@ public String liActive(String servletPath, String resourceUrl){
 	//System.err.println("====="+servletPath+"===="+resourceUrl);
 	//System.err.println(servletPath.contains(resourceUrl));
     if(servletPath!=null&&servletPath.contains(resourceUrl)){
-         return " class='active'";
+		System.err.println("servletPath: "+servletPath);
+		System.err.println("resourceUrl: "+resourceUrl);
+		return " class='active'";
      }
     return ""; 
 }
@@ -24,7 +26,6 @@ public String isCurrentSubmenu(String servletPath, String resourceUrl){
     return "";
 }
 %>
-
 
 <%
 String current = request.getParameter("current");
@@ -44,7 +45,7 @@ if(navResourceList==null){
         <div id="general">
 	        <!-- Sidebar user -->
 	        <div class="sidebar-user widget">
-				<div class="navbar"><div class="navbar-inner"><h6>欢迎登录!</h6></div></div>
+				<div class="navbar"><div class="navbar-inner"><h6>基础后台管理系统</h6></div></div>
 	            <a href="index.html#" title="" class="user"><img src="<s:url value='/img/demo/sidebar_user_big.png'/>" alt="" /></a>
 	        </div>
 	        <!-- /sidebar user -->
@@ -54,9 +55,12 @@ if(navResourceList==null){
 	        	<%
 		        	String servletPath = (String)request.getAttribute("servletPath");
 	            	for(AdminResource resource : navResourceList){
-		        %>  
+		        %>
 	            <li <%=liActive(servletPath, resource.getUrl())%>>
-	            	<a href="#" title="" class="expand" id="current"><i class="icon-reorder"></i><%=resource.getResourceName()%></a>
+	            	<%-- <%=servletPath%>_<%=resource.getUrl()%> --%>
+	            	<a href="#" title="" class="expand" id="current">
+	            		<i class="icon-reorder"></i><%=resource.getResourceName()%>
+	            	</a>
 	                <ul>
 	                	<%
 			             for(AdminResource childResource : resource.getChildResources()){

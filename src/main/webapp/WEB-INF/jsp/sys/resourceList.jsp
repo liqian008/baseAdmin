@@ -19,8 +19,8 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 <!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
 
 <script type="text/javascript" src="../js/plugins/charts/excanvas.min.js"></script>
 <script type="text/javascript" src="../js/plugins/charts/jquery.sparkline.min.js"></script>
@@ -80,7 +80,7 @@ SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                                     <th>资源链接</th>
                                     <th>排序</th>
                                     <th>状态</th>
-                                    <th>最后登录</th>
+                                    <th>最后更新时间</th>
                                     <th class="actions-column">操作</th>
                                 </tr>
                             </thead>

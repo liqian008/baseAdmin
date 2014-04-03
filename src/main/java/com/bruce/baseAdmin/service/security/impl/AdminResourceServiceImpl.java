@@ -79,7 +79,7 @@ public class AdminResourceServiceImpl implements AdminResourceService{
 	@SuppressWarnings("unchecked")
     @Override
     public List<AdminResource> getNavResources() {
-	 // 用户有权限的展示菜单
+		// 用户有权限的展示菜单
         List<AdminResource> allResources = null;
         
         List<GrantedAuthority> authList = (List<GrantedAuthority>) SecurityContextHolder.getContext().getAuthentication().getAuthorities();
@@ -87,25 +87,23 @@ public class AdminResourceServiceImpl implements AdminResourceService{
         if (authList != null) {
             SimpleGrantedAuthority superAuthority = new SimpleGrantedAuthority(
                     ConstantsUtil.SECURITY_AUTHORITY_PREFIX + "SUPER");
-            if (authList.contains(superAuthority)) {
-                // 超级用户取得所有资源菜单
+            if (authList.contains(superAuthority)) {// 超级用户取得所有资源菜单
                 allResources = getAllNavResources();
-            } else {
+            } else {//非超级用户
                 for (GrantedAuthority authority : authList) {
                     String authorityName = authority.toString();
                     if (!(ConstantsUtil.SECURITY_AUTHORITY_PREFIX + "SUPER").equals(authorityName)) {
-                        String roleIdStr = authorityName.substring(
-                                ConstantsUtil.SECURITY_AUTHORITY_PREFIX
-                                        .length(), authorityName.length());
+                        String roleIdStr = authorityName.substring(ConstantsUtil.SECURITY_AUTHORITY_PREFIX.length(), authorityName.length());
                         Integer roleId = new Integer(roleIdStr);
                         roleIdList.add(roleId);
                     }
                 }
-                // 普通用户取得有显示权的资源菜单
+                //普通用户取得有显示权的资源菜单
                 allResources = getNavResourcesByRoleIds(roleIdList);
             }
         }
         if (true) {
+        	//刷新资源
             securityMetadataSource.initResource();
         }
         return treeAdminResources(allResources);
