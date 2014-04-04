@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 
 <!-- Footer -->
-<div id="footer">
-	<div class="copyrights">&copy; Brought to you by Eugene Kopyov.</div>
-	<!-- <ul class="footer-links">
-		<li><a href="login.html" title=""><i class="icon-cogs"></i>Contact
-				admin</a></li>
-		<li><a href="login.html" title=""><i class="icon-screenshot"></i>Report
-				bug</a></li>
-	</ul> -->
+<div class="footer clearfix">
+	<div class="pull-left">
+		&copy; 2013. Londinium Admin Template by <a
+			href="http://themeforest.net/user/Kopyov">Eugene Kopyov</a>
+	</div>
+	<div class="pull-right icons-group">
+		<a href="login_simple.html#"><i class="icon-screen2"></i></a> <a
+			href="login_simple.html#"><i class="icon-balance"></i></a> <a
+			href="login_simple.html#"><i class="icon-cog3"></i></a>
+	</div>
 </div>
 <!-- /footer -->

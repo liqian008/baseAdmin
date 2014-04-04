@@ -5,129 +5,174 @@
 <%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%>
 
 <%
-SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 %>
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<title>Pannonia - premium responsive admin template by Eugene Kopyov</title>
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-<!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/charts/excanvas.min.js"></script>
-<script type="text/javascript" src="../js/plugins/charts/jquery.sparkline.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/ui/jquery.easytabs.min.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/jquery.collapsible.min.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/prettify.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/jquery.fancybox.js"></script>
-
-<script type="text/javascript" src="../js/plugins/forms/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="../js/plugins/forms/jquery.tagsinput.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/tables/jquery.dataTables.min.js"></script>
-
-<script type="text/javascript" src="../js/files/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../js/functions/index.js"></script>
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Londinium - premium responsive admin template by Eugene
+	Kopyov</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/londinium-theme.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../css/styles.min.css" rel="stylesheet" type="text/css">
+<link href="../css/icons.min.css" rel="stylesheet" type="text/css">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext"
+	rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/charts/sparkline.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/select2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/inputmask.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/autosize.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/inputlimit.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/listbox.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/multiselect.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/validate.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/tags.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/switch.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.full.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.queue.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/toolbar.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/daterangepicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fancybox.min.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/prettify.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/moment.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/jgrowl.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/datatables.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/colorpicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fullcalendar.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/timepicker.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/collapsible.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/application.js"></script>
 </head>
-
-<body>
+<body class="sidebar-wide">
 
 	<jsp:include page="../inc/header.jsp"></jsp:include>
 
-
-	<!-- Content container -->
-	<div id="container">
+	<!-- Page container -->
+	<div class="page-container">
 
 		<jsp:include page="../inc/leftSidebar.jsp"></jsp:include>
 
+		<!-- Page content -->
+		<div class="page-content">
+			<!-- Page header -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>
+						资源管理 
+						<!-- 
+						<small>Headings, lists, code, pre etc. </small>
+						 -->
+					</h3>
+				</div>
+			</div>
+			<!-- /page header -->
+			<!-- Breadcrumbs line -->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">资源管理</li>
+				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse"
+						data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+			<!-- /breadcrumbs line -->
+			
+			<div class="callout callout-info fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<h5>Wide left sidebar layout</h5>
+				<p>Page layout with left aligned wide sidebar, with right
+					aligned icons and 4 level navigation.</p>
+			</div>
+			 
+			<!-- Table view -->
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h5 class="panel-title">
+						<i class="icon-people"></i>资源管理
+					</h5>
+				</div>
+				<div class="datatable-media">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+                                <th>资源名</th>
+                                <th>父ID</th>
+                                <th>资源链接</th>
+                                <th>排序</th>
+                                <th>状态</th>
+                                <th>最后更新时间</th>
+                                <th class="team-links">操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<%
+                           	List<AdminResource> adminResourceList = (List<AdminResource>)request.getAttribute("adminResourceList");
+                           	if(adminResourceList!=null&&adminResourceList.size()>0){
+                           		for(AdminResource adminResource: adminResourceList){
+                           	%>
+						
+							<tr>
+								<td><%=adminResource.getId()%></td>
+		                        <td><%=adminResource.getResourceName()%></td>
+		                        <td><%=adminResource.getParentId()%></td>
+		                        <td><%=adminResource.getUrl()%></td>
+		                        <td><%=adminResource.getSort()%></td>
+		                        <td>正常</td>
+		                        <td><%=sdf.format(adminResource.getUpdateTime())%></td>
+		                        <td class='text-center'>
+		                        	<div class="table-controls">
+										<a href="./resourceEdit?id=<%=adminResource.getId()%>"
+											class="btn btn-link btn-icon btn-xs tip" title=""
+											data-original-title="编 辑"><i class="icon-pencil"></i></a>
+										<a href="./delResource?id=<%=adminResource.getId()%>"
+											class="btn btn-link btn-icon btn-xs tip" title=""
+											data-original-title="删除"><i class="icon-cogs"></i></a>
+									</div>
+								</td>
+							</tr>
+							<%}
+                           	} %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- /table view -->
 
-		<!-- Content -->
-		<div id="content">
-
-		    <!-- Content wrapper -->
-		    <div class="wrapper">
-
-			    <jsp:include page="../inc/mainHeader.jsp"></jsp:include>
-
-		    	<h5 class="widget-name"><i class="icon-th"></i>资源管理</h5>
-
-                <!-- Media datatable -->
-                <div class="widget">
-                	<div class="navbar">
-                    	<div class="navbar-inner">
-                        	<h6>资源列表</h6>
-                            <a href="./resourceAdd" class="btn btn-primary pull-right">新增资源</a>
-                        </div>
-                    </div>
-                    <div class="table-overflow">
-                        <table class="table table-striped table-bordered table-checks media-table">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>资源名</th>
-                                    <th>父ID</th>
-                                    <th>资源链接</th>
-                                    <th>排序</th>
-                                    <th>状态</th>
-                                    <th>最后更新时间</th>
-                                    <th class="actions-column">操作</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            	<%
-                            	List<AdminResource> adminResourceList = (List<AdminResource>)request.getAttribute("adminResourceList");
-                            	if(adminResourceList!=null&&adminResourceList.size()>0){
-                            		for(AdminResource adminResource: adminResourceList){
-                            	%>
-                            	<tr>
-			                        <td><%=adminResource.getId()%></td>
-			                        <td><%=adminResource.getResourceName()%></td>
-			                        <td><%=adminResource.getParentId()%></td>
-			                        <td><%=adminResource.getUrl()%></td>
-			                        <td><%=adminResource.getSort()%></td>
-			                        <td>正常</td>
-			                        <td><%=sdf.format(adminResource.getUpdateTime())%></td>
-			                        <td>
-		                                <ul class="navbar-icons">
-		                                    <li><a href="./resourceEdit?id=<%=adminResource.getId()%>" class="tip" title="修改"><i class="ico-edit"></i></a></li>
-		                                    <li><a href="./delResource?id=<%=adminResource.getId()%>" class="tip" title="删除"><i class="ico-remove"></i></a></li>
-		                                </ul>
-			                        </td>
-                                </tr>
-                            	<%}
-                            	}%>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <!-- /media datatable -->
-
-
-
-
-		    </div>
-		    <!-- /content wrapper -->
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
 
 		</div>
-		<!-- /content -->
-
+		<!-- /page content -->
 	</div>
-	<!-- /content container -->
-
-
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
-
-
+	<!-- /page container -->
 </body>
 </html>

@@ -17,81 +17,110 @@ if(message==null||message.equals("")){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<title>Pannonia - premium responsive admin template by Eugene Kopyov</title>
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-<!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/charts/excanvas.min.js"></script>
-<script type="text/javascript" src="../js/plugins/charts/jquery.sparkline.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/ui/jquery.easytabs.min.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/jquery.collapsible.min.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/prettify.js"></script>
-<script type="text/javascript" src="../js/plugins/ui/jquery.fancybox.js"></script>
-
-<script type="text/javascript" src="../js/plugins/forms/jquery.uniform.min.js"></script>
-<script type="text/javascript" src="../js/plugins/forms/jquery.tagsinput.min.js"></script>
-
-<script type="text/javascript" src="../js/plugins/tables/jquery.dataTables.min.js"></script>
-
-<script type="text/javascript" src="../js/files/bootstrap.min.js"></script>
-
-<script type="text/javascript" src="../js/functions/index.js"></script>
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Londinium - premium responsive admin template by Eugene
+	Kopyov</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/londinium-theme.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../css/styles.min.css" rel="stylesheet" type="text/css">
+<link href="../css/icons.min.css" rel="stylesheet" type="text/css">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext"
+	rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/plugins/charts/sparkline.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/select2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/inputmask.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/autosize.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/inputlimit.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/listbox.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/multiselect.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/validate.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/tags.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/switch.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.full.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.queue.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/toolbar.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/daterangepicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fancybox.min.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/prettify.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/moment.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/jgrowl.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/datatables.min.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/colorpicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fullcalendar.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/timepicker.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/collapsible.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/application.js"></script>
 </head>
-
-<body>
-
+<body class="sidebar-wide">
+	
 	<jsp:include page="../inc/header.jsp"></jsp:include>
-
-	<!-- Content container -->
-	<div id="container">
-
+	
+	<!-- Page container -->
+	<div class="page-container">
+		
 		<jsp:include page="../inc/leftSidebar.jsp"></jsp:include>
 
-
-		<!-- Content -->
-		<div id="content">
-
-		    <!-- Content wrapper -->
-		    <div class="wrapper">
-
-			    <jsp:include page="../inc/mainHeader.jsp"></jsp:include>
-
-		    	<!-- Basic inputs -->
-	            <h5 class="widget-name"><i class="icon-align-justify"></i>Basic inputs</h5>
-
-	            <form class="form-horizontal" action="forms.html#">
-					<fieldset>
-
-						<!-- General form elements -->
-						<div class="widget row-fluid">
-						    <div class="well">
-						    	<div class="alert margin">
-						    		<button type="button" class="close" data-dismiss="alert">×</button>
-						    		<p><strong><%=message%></strong></p>
-						    	</div>
-						    </div>
-						</div>
-						<!-- /general form elements -->
-					</fieldset> 
-				</form>
-				<!-- /basic inputs -->
-		    </div>
-		    <!-- /content wrapper -->
+		<!-- Page content -->
+		<div class="page-content">
+			<!-- Page header -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>
+						结果页
+						<!-- 
+						<small>Headings, lists, code, pre etc. </small>
+						 --> 
+					</h3>
+				</div>
+			</div>
+			<!-- /page header -->
+			<!-- Breadcrumbs line -->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">操作结果</li>
+				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse"
+						data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+			<!-- /breadcrumbs line -->
+			<!-- Callout -->
+			<div class="callout callout-info fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<h5>操作结果</h5>
+				<p><strong><%=message%></strong></p>
+			</div>
+			<!-- /callout -->
+			
+			
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
+			
 		</div>
-		<!-- /content -->
+		<!-- /page content -->
 	</div>
-	<!-- /content container -->
-
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
-
-
+	<!-- /page container -->
 </body>
 </html>

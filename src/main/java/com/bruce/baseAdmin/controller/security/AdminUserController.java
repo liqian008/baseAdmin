@@ -155,10 +155,12 @@ public class AdminUserController extends BaseController {
         model.addAttribute("servletPath", servletPath);
         
         int result = 0;
-        if(userId!=null && userId>0 && roleIds!=null && roleIds.length>0){
-            adminUserService.deleteRolesByUserId(userId);
-            List<Integer> roleIdList = Arrays.asList(roleIds);
-            result = adminUserService.saveUserRoles(userId, roleIdList);
+        if(userId!=null && userId>0){
+        	adminUserService.deleteRolesByUserId(userId);
+        	if(roleIds!=null && roleIds.length>0){
+        		List<Integer> roleIdList = Arrays.asList(roleIds);
+        		result = adminUserService.saveUserRoles(userId, roleIdList);
+        	}
         }
         
         model.addAttribute("redirectUrl", "../sys/users");

@@ -1,79 +1,77 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%> 
+<%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%>
 
 
-<%!
-public String liActive(String servletPath, String resourceUrl){
-	//System.err.println("====="+servletPath+"===="+resourceUrl);
-	//System.err.println(servletPath.contains(resourceUrl));
-    if(servletPath!=null&&servletPath.contains(resourceUrl)){
-		System.err.println("servletPath: "+servletPath);
-		System.err.println("resourceUrl: "+resourceUrl);
-		return " class='active'";
-     }
-    return ""; 
-}
+<%!public String liActive(String servletPath, String resourceUrl) {
+		System.err.println("====="+servletPath+"===="+resourceUrl);
+		System.err.println(servletPath.contains(resourceUrl));
+		if (servletPath != null && servletPath.contains(resourceUrl)) {
+			System.err.println("servletPath: " + servletPath);
+			System.err.println("resourceUrl: " + resourceUrl);
+			return " class='active'";
+		}
+		return "";
+	}
 
-public String isCurrentSubmenu(String servletPath, String resourceUrl){
-  	System.err.println("====="+servletPath+"===="+resourceUrl);
-  	System.err.println(servletPath.contains(resourceUrl));
-    if(servletPath!=null&&servletPath.contains("/baseAdmin"+resourceUrl)){
-         return " class='current'";
-     }
-    return "";
-}
-%>
+	public String isCurrentSubmenu(String servletPath, String resourceUrl) {
+		//System.err.println("=====" + servletPath + "====" + resourceUrl);
+		//System.err.println(servletPath.contains(resourceUrl));
+		if (servletPath != null
+				&& servletPath.contains("/baseAdmin" + resourceUrl)) {
+			return " class='active'";
+		}
+		return "";
+	}%>
 
 <%
-String current = request.getParameter("current");
+	String current = request.getParameter("current");
 
-//菜单加载，我放在session中，如果你需要考虑session过期的问题，也可以放在一个缓存或静态对象中
-//或者每次都去数据库读取也行，但是不推荐每次去读取
-List<AdminResource> navResourceList = (List<AdminResource>)request.getSession().getAttribute("navResourceList");
-if(navResourceList==null){
-	navResourceList = new ArrayList<AdminResource>();
-}
+	//菜单加载，我放在session中，如果你需要考虑session过期的问题，也可以放在一个缓存或静态对象中
+	//或者每次都去数据库读取也行，但是不推荐每次去读取
+	List<AdminResource> navResourceList = (List<AdminResource>) request
+			.getSession().getAttribute("navResourceList");
+	if (navResourceList == null) {
+		navResourceList = new ArrayList<AdminResource>();
+	}
 %>
 
-<!-- Sidebar -->
-<div id="sidebar">
-	<div class="sidebar-tabs">
-	
-        <div id="general">
-	        <!-- Sidebar user -->
-	        <div class="sidebar-user widget">
-				<div class="navbar"><div class="navbar-inner"><h6>基础后台管理系统</h6></div></div>
-	            <a href="index.html#" title="" class="user"><img src="<s:url value='/img/demo/sidebar_user_big.png'/>" alt="" /></a>
-	        </div>
-	        <!-- /sidebar user -->
-			
-		    <!-- Main navigation -->
-	        <ul class="navigation widget">
-	        	<%
-		        	String servletPath = (String)request.getAttribute("servletPath");
-	            	for(AdminResource resource : navResourceList){
-		        %>
-	            <li <%=liActive(servletPath, resource.getUrl())%>>
-	            	<%-- <%=servletPath%>_<%=resource.getUrl()%> --%>
-	            	<a href="#" title="" class="expand" id="current">
-	            		<i class="icon-reorder"></i><%=resource.getResourceName()%>
-	            	</a>
-	                <ul>
-	                	<%
-			             for(AdminResource childResource : resource.getChildResources()){
-			            %>
-	                    <li><a href="<s:url value='<%=childResource.getUrl()%>'/>" <%=isCurrentSubmenu(servletPath, childResource.getUrl())%> title="<%=childResource.getResourceName()%>"><%=childResource.getResourceName()%></a></li>
-	                    <%}%>
-	                </ul> 
-	            </li>
-	            <%}%>
-	        </ul>
-	        <!-- /main navigation -->
 
-        </div>
-    </div>
+<div class="sidebar collapse">
+	<div class="sidebar-content">
+
+		<div class="user-menu dropdown">
+			<a href="#"><img src="/base-admin/images/demo/users/face1.png" 
+				alt="">
+			<div class="user-info">
+					Madison Gartner <span>Web Developer</span>
+				</div></a>
+		</div>
+
+
+		<!-- Main navigation -->
+		<ul class="navigation navigation-icons-left"">
+			<%
+	        	String servletPath = (String)request.getAttribute("servletPath");
+            	for(AdminResource resource : navResourceList){
+	        %>
+		
+			<li <%=liActive(servletPath, resource.getUrl())%>>
+				<a href="#" class="expand" id='second-level'><span><%=resource.getResourceName()%></span>
+					<i class="icon-grid"></i></a>
+			<ul>
+			<%
+            for(AdminResource childResource : resource.getChildResources()){
+            %>
+				<li><a href="<s:url value='<%=childResource.getUrl()%>'/>" <%=isCurrentSubmenu(servletPath, childResource.getUrl())%>><%=childResource.getResourceName()%></a></li>
+			<%}%>
+			</ul>
+			</li>
+			<%}%>
+		</ul>
+		<!-- /main navigation -->
+	</div>
 </div>
-<!-- /sidebar -->

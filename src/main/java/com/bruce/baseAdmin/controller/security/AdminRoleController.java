@@ -137,10 +137,12 @@ public class AdminRoleController extends BaseController {
 		model.addAttribute("servletPath", servletPath);
 		
 		int result = 0;
-		if(roleId!=null && roleId>0 && resourceIds!=null && resourceIds.length>0){
+		if(roleId!=null && roleId>0){
 		    adminRoleService.deleteResourcesByRoleId(roleId);
-		    List<Integer> menuIdList = Arrays.asList(resourceIds);
-		    result = adminRoleService.saveRoleResources(roleId, menuIdList);
+		    if(resourceIds!=null && resourceIds.length>0){
+			    List<Integer> menuIdList = Arrays.asList(resourceIds);
+			    result = adminRoleService.saveRoleResources(roleId, menuIdList);
+		    }
 		}
 		model.addAttribute("redirectUrl", "../sys/roles");
 		return "forward:/home/operationRedirect";

@@ -6,133 +6,182 @@
 
 <%@ include file="../inc/include_tag.jsp" %>
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-<title>Pannonia - premium responsive admin template by Eugene Kopyov</title>
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" />
-<!--[if IE 8]><link href="css/ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
-
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script type="text/javascript" src="../js/jquery-ui.min.js"></script>
-
-<script type="text/javascript"src="../js/plugins/charts/jquery.sparkline.min.js"></script> 
-
-<script type="text/javascript"src="../js/plugins/ui/jquery.easytabs.min.js"></script>
-<script type="text/javascript"src="../js/plugins/ui/jquery.collapsible.min.js"></script>
-<script type="text/javascript"src="../js/plugins/ui/jquery.mousewheel.js"></script>
-
-<script type="text/javascript"src="../js/plugins/forms/jquery.uniform.min.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.autosize.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.inputlimiter.min.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.tagsinput.min.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.inputmask.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.select2.min.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.listbox.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.validation.js"></script>
-<script type="text/javascript"src="../js/plugins/forms/jquery.validationEngine.zh-CN.js"></script>
-
-<script type="text/javascript"src="../js/globalize/globalize.js"></script>
-<script type="text/javascript"src="../js/globalize/globalize.culture.de-DE.js"></script>
-<script type="text/javascript"src="../js/globalize/globalize.culture.ja-JP.js"></script>
-
-<script type="text/javascript"src="../js/files/bootstrap.min.js"></script>
-
-<script type="text/javascript"src="../js/functions/forms.js"></script>
-
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Londinium - premium responsive admin template by Eugene
+	Kopyov</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="../css/londinium-theme.min.css" rel="stylesheet"
+	type="text/css">
+<link href="../css/styles.min.css" rel="stylesheet" type="text/css">
+<link href="../css/icons.min.css" rel="stylesheet" type="text/css">
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext"
+	rel="stylesheet" type="text/css">
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript"
+	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/charts/sparkline.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/select2.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/inputmask.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/autosize.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/inputlimit.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/listbox.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/multiselect.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/validate.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/tags.min.js"></script>
+<script type="text/javascript" src="../js/plugins/forms/switch.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.full.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/uploader/plupload.queue.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/wysihtml5.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/forms/wysihtml5/toolbar.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/daterangepicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fancybox.min.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/prettify.js"></script>
+<script type="text/javascript" src="../js/plugins/interface/moment.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/jgrowl.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/datatables.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/colorpicker.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/fullcalendar.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/timepicker.min.js"></script>
+<script type="text/javascript"
+	src="../js/plugins/interface/collapsible.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/application.js"></script>
 </head>
-
-<body>
+<body class="sidebar-wide">
 
 	<jsp:include page="../inc/header.jsp"></jsp:include>
 
-	<!-- Content container -->
-	<div id="container">
+	<!-- Page container -->
+	<div class="page-container">
 
 		<jsp:include page="../inc/leftSidebar.jsp"></jsp:include>
-		
-		<!-- Content -->
-		<div id="content">
-			<!-- Content wrapper -->
-		    <div class="wrapper">
 
-				<jsp:include page="../inc/mainHeader.jsp"></jsp:include>
-	
-	            <!-- Form validation -->
-	            <h5 class="widget-name"><i class="icon-th-list"></i>用户管理</h5>
+		<!-- Page content -->
+		<div class="page-content">
+			<!-- Page header -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>
+						关联用户角色
+						<!-- 
+						<small>Headings, lists, code, pre etc. </small>
+						 -->
+					</h3>
+				</div>
+			</div>
+			<!-- /page header -->
+			<!-- Breadcrumbs line -->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">关联用户角色</li>
+				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse"
+						data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+			<!-- /breadcrumbs line -->
+			
+			<div class="callout callout-info fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<h5>Wide left sidebar layout</h5>
+				<p>Page layout with left aligned wide sidebar, with right
+					aligned icons and 4 level navigation.</p>
+			</div>
+			
+			<%
+			AdminUser adminUser = (AdminUser)request.getAttribute("adminUser");
+			%>
+
+			<form id="validate" action="<s:url value='./saveUserRole'/>" method="post"  class="form-horizontal form-bordered">				
 				
-				<%
-				AdminUser adminUser = (AdminUser)request.getAttribute("adminUser");
-				%>
+				<!-- Basic inputs -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h6 class="panel-title">
+							<i class="icon-bubble4"></i>关联用户角色
+						</h6>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label class="col-sm-2 control-label">用户名:
+							</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="username" id="username" value="${adminUser.username}"/>
+	                           <input type="hidden"name="userId" id="userId" value="${adminUser.id}"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">昵 称:
+							</label>
+							<div class="col-sm-4">
+								<input type="text" class="form-control" name="nickname" id="nickname" value="${adminUser.nickname}"/>
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label">关联角色:
+							</label>
+							<div class="col-sm-10">
+								<%
+                               	List<AdminRole> allRoles = (List<AdminRole>)request.getAttribute("allRoles");
+                               	List<AdminRole> userRoles = (List<AdminRole>)request.getAttribute("userRoles");
+                               	if(allRoles!=null&&allRoles.size()>0){
+                               	%>
+                               	<div class="block-inner">
+                               	<%
+                               		for(AdminRole loopRole: allRoles){
+                               	%>
+									<label class="checkbox-inline checkbox-info">
+										<input type="checkbox" class="styled" name="roleIds" id="roleId_<%=loopRole.getId()%>" value="<%=loopRole.getId()%>" <%=userRoles!=null&&userRoles.contains(loopRole)?"checked='checked'":""%>/>
+										<%=loopRole.getRoleName()%>
+									</label>
+									<%}%>
+								</div>
+							<%}%>
+							</div>
+						</div>
+						
+						<div class="form-actions text-right">
+							<input type="reset" value="重 置" class="btn btn-danger">
+							<input type="submit" value="提 交" class="btn btn-primary">
+						</div>
+					</div>
+				</div>
 				
-				<form id="validate" action="./saveUserRole" method="post"  class="form-horizontal">
-	                <fieldset>
-	                    <!-- Form validation -->
-	                    <div class="widget">
-	                        <div class="navbar"><div class="navbar-inner"><h6>编辑管理员信息</h6></div></div>
-	                    	<div class="well row-fluid">
+			</form>
 
-	                            <div class="control-group">
-	                                <label class="control-label">用户名: <span class="text-error">*</span></label>
-	                                <div class="controls">
-	                                    <input type="text" class="span4" name="username" id="username" value="${adminUser.username}" readonly="readonly"/>
-	                                    <input type="hidden"name="userId" id="userId" value="${adminUser.id}"/>
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="control-group">
-	                                <label class="control-label">昵称: <span class="text-error">*</span></label>
-	                                <div class="controls">
-	                                    <input type="text" class="validate[required] span4" name="nickname" id="nickname" value="${adminUser.nickname}" readonly="readonly"/>
-	                                </div>
-	                            </div>
-	                            
-	                            <div class="control-group">
-	                                <label class="control-label">关联角色: <span class="text-error">*</span></label>
-	                                <div class="controls">
-	                                	
-	                                	<%
-	                                	List<AdminRole> allRoles = (List<AdminRole>)request.getAttribute("allRoles");
-	                                	List<AdminRole> userRoles = (List<AdminRole>)request.getAttribute("userRoles");
-	                                	if(allRoles!=null&&allRoles.size()>0){
-	                                		for(AdminRole loopRole: allRoles){
-	    	                                	
-	                                	%>
-	                                	<label class="checkbox inline">
-	                                		<input class="styled" type="checkbox" name="roleIds" id="roleId_<%=loopRole.getId()%>" value="<%=loopRole.getId()%>" <%=userRoles!=null&&userRoles.contains(loopRole)?"checked='checked'":""%>/>
-											<%=loopRole.getRoleName()%>
-										</label>
-										<%}
-	                                	}%>
-	                                </div>
-	                            </div>
-	                            <div class="form-actions align-left">
-	                                <button type="submit" class="btn btn-info">提 交</button>
-	                                <button type="reset" class="btn">重 置</button>
-	                            </div>
-	                        </div>
-	                    </div>
-	                    <!-- /form validation -->
-	                </fieldset>
-				</form>
-				<!-- /form validation -->
-
-	           
-		    </div>
-		    <!-- /content wrapper -->
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
 
 		</div>
-		<!-- /content -->
-
+		<!-- /page content -->
 	</div>
-	<!-- /content container -->
-
-
-	<jsp:include page="../inc/footer.jsp"></jsp:include>
-
-
+	<!-- /page container -->
 </body>
 </html>

@@ -301,19 +301,15 @@ public class AdminResource {
     
     @Override
     public boolean equals(Object obj){
-        if(this == obj){
+    	if(this == obj){
             return true;
         }
         if(obj instanceof AdminResource){
-            AdminResource resourceObj = (AdminResource)obj;
-            if(this.id == resourceObj.id){
+        	AdminResource resourceObj = (AdminResource)obj;
+            if(this.id!=null && this.id.equals(resourceObj.id)){
                 return true;
             }
-            else{
-                return false;
-            }
-        }else{
-            return false;
         }
+        return false;
     }
 }
