@@ -7,11 +7,11 @@
 
 
 <%!public String liActive(String servletPath, String resourceUrl) {
-		System.err.println("====="+servletPath+"===="+resourceUrl);
-		System.err.println(servletPath.contains(resourceUrl));
+		//System.err.println("====="+servletPath+"===="+resourceUrl);
+		//System.err.println(servletPath.contains(resourceUrl));
 		if (servletPath != null && servletPath.contains(resourceUrl)) {
-			System.err.println("servletPath: " + servletPath);
-			System.err.println("resourceUrl: " + resourceUrl);
+			//System.err.println("servletPath: " + servletPath);
+			//System.err.println("resourceUrl: " + resourceUrl);
 			return " class='active'";
 		}
 		return "";
@@ -20,8 +20,8 @@
 	public String isCurrentSubmenu(String servletPath, String resourceUrl) {
 		//System.err.println("=====" + servletPath + "====" + resourceUrl);
 		//System.err.println(servletPath.contains(resourceUrl));
-		if (servletPath != null
-				&& servletPath.contains("/baseAdmin" + resourceUrl)) {
+		if (servletPath != null && servletPath.contains("/baseAdmin" + resourceUrl)) {
+		//if (servletPath != null && servletPath.contains("/baseAdmin" + resourceUrl)) {
 			return " class='active'";
 		}
 		return "";
@@ -44,7 +44,7 @@
 	<div class="sidebar-content">
 
 		<div class="user-menu dropdown">
-			<a href="#"><img src="/base-admin/images/demo/users/face1.png" 
+			<a href="#"><img src="/base-admin/images/demo/users/default_avatar.jpg" 
 				alt="">
 			<div class="user-info">
 					Madison Gartner <span>Web Developer</span>

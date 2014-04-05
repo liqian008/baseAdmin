@@ -23,10 +23,8 @@
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext"
 	rel="stylesheet" type="text/css">
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../js/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="../js/jquery/1.10.2/jquery-ui.min.js"></script>
 <script type="text/javascript"
 	src="../js/plugins/charts/sparkline.min.js"></script>
 <script type="text/javascript" src="../js/plugins/forms/uniform.min.js"></script>
@@ -118,6 +116,7 @@
 					<h5 class="panel-title">
 						<i class="icon-people"></i>角色管理
 					</h5>
+					<a href="./roleAdd"><span class="label label-danger pull-right">新增角色</span></a>
 				</div>
 				<div class="datatable-media">
 					<table class="table table-bordered table-striped">

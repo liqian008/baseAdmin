@@ -21,7 +21,7 @@
 	</div>
 	<ul class="nav navbar-nav navbar-right collapse" id="navbar-icons">
 		<li class="user dropdown"><a class="dropdown-toggle"
-			data-toggle="dropdown"><img src="/base-admin/images/demo/users/face1.png"
+			data-toggle="dropdown"><img src="/base-admin/images/demo/users/default_avatar.jpg"
 				alt=""><span>Eugene Kopyov</span><i class="caret"></i></a>
 		<ul class="dropdown-menu dropdown-menu-right icons-right">
 				<li><a href="/base-admin/home/profile"><i class="icon-user"></i>
