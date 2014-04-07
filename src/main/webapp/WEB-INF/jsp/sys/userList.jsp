@@ -146,13 +146,13 @@
 		                        	<div class="table-controls">
 										<a href="./userEdit?id=<%=adminUser.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="编 辑"><i class="icon-pencil"></i></a>
+											data-original-title="编 辑"><i class="icon-pencil3"></i></a>
 										<a href="./userRoleSet?userId=<%=adminUser.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="关联角色"><i class="icon-plus"></i></a>
+											data-original-title="关联角色"><i class="icon-tree3"></i></a>
 										<a href="./delUser?id=<%=adminUser.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="删除"><i class="icon-cogs"></i></a>
+											data-original-title="删除"><i class="icon-remove3"></i></a>
 									</div>
 								</td>
 							</tr>
