@@ -767,9 +767,9 @@ $(function() {
 
 	//===== WYSIWYG editor =====//
 
-	$('.editor').wysihtml5({
-	    stylesheets: "css/wysihtml5/wysiwyg-color.css"
-	});
+//	$('.editor').wysihtml5({
+//	    stylesheets: "css/wysihtml5/wysiwyg-color.css"
+//	});
 
 
 	//===== Elastic textarea =====//

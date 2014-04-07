@@ -127,7 +127,7 @@
 					<div class="panel-body">
 						
 						<div class="form-group"> 
-							<label class="col-sm-2 control-label">角色名:
+							<label class="col-sm-2 control-label text-right">角色名: <span class="mandatory">*
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="roleName" id="roleName" value="${adminRole.roleName}" readonly="readonly"/>
@@ -137,7 +137,7 @@
 						
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">关联资源:
+							<label class="col-sm-2 control-label text-right">关联资源: <span class="mandatory">*
 							</label>
 							<div class="col-sm-10">
 								<%
@@ -145,18 +145,16 @@
                                	List<AdminResource> roleResources = (List<AdminResource>)request.getAttribute("roleResources");
                                	
                                	if(allResources!=null&&allResources.size()>0){
-                               	%>
-                               	<div class="block-inner">
-                               	<%
                                	for(AdminResource loopResource: allResources){
                                	%>
-                               		<label class="checkbox-inline checkbox-info">
+                               		<div class="checkbox checkbox-info">
+										<label>
 										<input class="styled" type="checkbox" name="resourceIds" id="resourceId_<%=loopResource.getId()%>" value="<%=loopResource.getId()%>" <%=roleResources!=null&&roleResources.contains(loopResource)?"checked='checked'":""%>/>
 										<%=loopResource.getResourceName()%>
 									</label>
-                               	<%}%>
-                               	</div>
-                               	<%}%>
+									</div>
+                               	<%}
+                               	}%>
 							</div>
 						</div>
 						

@@ -125,7 +125,7 @@
 					</div>
 					<div class="panel-body">
 						<div class="form-group">
-							<label class="col-sm-2 control-label">用户名:
+							<label class="col-sm-2 control-label text-right">用户名: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="username" id="username" value="${adminUser.username}"/>
@@ -134,7 +134,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">昵 称:
+							<label class="col-sm-2 control-label text-right">昵 称: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="nickname" id="nickname" value="${adminUser.nickname}"/>
@@ -142,7 +142,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">密 码:
+							<label class="col-sm-2 control-label text-right">密 码: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="password" id="password" value=""/>
@@ -150,7 +150,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">状 态:
+							<label class="col-sm-2 control-label text-right">状 态: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<form:select path="adminUser.status" class="select-liquid">
