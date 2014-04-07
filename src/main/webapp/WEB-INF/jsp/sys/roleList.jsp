@@ -145,13 +145,13 @@
 		                        	<div class="table-controls">
 										<a href="./roleEdit?id=<%=adminRole.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="编 辑"><i class="icon-pencil"></i></a>
+											data-original-title="编 辑"><i class="icon-pencil3"></i></a>
 										<a href="./roleResourceSet?roleId=<%=adminRole.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="关联资源"><i class="icon-plus"></i></a>
+											data-original-title="关联资源"><i class="icon-tree3"></i></a>
 										<a href="./delRole?id=<%=adminRole.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="删除"><i class="icon-cogs"></i></a>
+											data-original-title="删除"><i class="icon-remove3"></i></a>
 									</div>
 								</td>
 							</tr>

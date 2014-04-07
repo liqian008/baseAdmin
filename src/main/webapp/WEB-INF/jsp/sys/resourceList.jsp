@@ -152,10 +152,10 @@
 		                        	<div class="table-controls">
 										<a href="./resourceEdit?id=<%=adminResource.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="编 辑"><i class="icon-pencil"></i></a>
+											data-original-title="编 辑"><i class="icon-pencil3"></i></a>
 										<a href="./delResource?id=<%=adminResource.getId()%>"
 											class="btn btn-link btn-icon btn-xs tip" title=""
-											data-original-title="删除"><i class="icon-cogs"></i></a>
+											data-original-title="删除"><i class="icon-remove3"></i></a>
 									</div>
 								</td>
 							</tr>
