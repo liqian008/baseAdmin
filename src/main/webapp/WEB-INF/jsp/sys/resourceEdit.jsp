@@ -122,7 +122,7 @@
 					</div>
 					<div class="panel-body">
 						<div class="form-group">
-							<label class="col-sm-2 control-label">父菜单:
+							<label class="col-sm-2 control-label text-right">父菜单: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<form:select path="adminResource.parentId"  items="${parentResources}"  itemValue="id"  itemLabel="resourceName" class="select-liquid"></form:select>
@@ -130,7 +130,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">资源名称:
+							<label class="col-sm-2 control-label text-right">资源名称: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="resourceName" id="resourceName" value="${adminResource.resourceName}"/>
@@ -140,7 +140,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">资源链接:
+							<label class="col-sm-2 control-label text-right">资源链接: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="url" id="url" value="${adminResource.url}"/>
@@ -148,7 +148,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">链接属性:
+							<label class="col-sm-2 control-label text-right">链接属性: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="urlTarget" id="urlTarget" value="${adminResource.urlTarget}"/>
@@ -156,7 +156,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">在导航栏中显示:
+							<label class="col-sm-2 control-label text-right">在导航栏中显示: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<form:select path="adminResource.navMenu" cssClass="select-liquid">
@@ -167,7 +167,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">状 态:
+							<label class="col-sm-2 control-label text-right">状 态: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<form:select path="adminResource.status" class="select-liquid">

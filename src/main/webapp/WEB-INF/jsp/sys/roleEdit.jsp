@@ -123,7 +123,7 @@
 					</div>
 					<div class="panel-body">
 						<div class="form-group">
-							<label class="col-sm-2 control-label">角色名:
+							<label class="col-sm-2 control-label text-right">角色名: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="roleName" id="roleName" value="${adminRole.roleName}"/>
@@ -133,7 +133,7 @@
 						
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">状 态:
+							<label class="col-sm-2 control-label text-right">状 态: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-4">
 								<form:select path="adminRole.status" cssClass="select-liquid">

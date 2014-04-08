@@ -126,7 +126,7 @@
 					</div>
 					<div class="panel-body">
 						<div class="form-group">
-							<label class="col-sm-2 control-label">用户名:
+							<label class="col-sm-2 control-label text-right">用户名: <span class="mandatory">*
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="username" id="username" value="${adminUser.username}"/>
@@ -135,7 +135,7 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">昵 称:
+							<label class="col-sm-2 control-label text-right">昵 称: <span class="mandatory">*
 							</label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="nickname" id="nickname" value="${adminUser.nickname}"/>
@@ -144,25 +144,23 @@
 						
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label">关联角色:
+							<label class="col-sm-2 control-label text-right">关联角色: <span class="mandatory">*
 							</label>
 							<div class="col-sm-10">
 								<%
                                	List<AdminRole> allRoles = (List<AdminRole>)request.getAttribute("allRoles");
                                	List<AdminRole> userRoles = (List<AdminRole>)request.getAttribute("userRoles");
                                	if(allRoles!=null&&allRoles.size()>0){
-                               	%>
-                               	<div class="block-inner">
-                               	<%
                                		for(AdminRole loopRole: allRoles){
                                	%>
-									<label class="checkbox-inline checkbox-info">
-										<input type="checkbox" class="styled" name="roleIds" id="roleId_<%=loopRole.getId()%>" value="<%=loopRole.getId()%>" <%=userRoles!=null&&userRoles.contains(loopRole)?"checked='checked'":""%>/>
-										<%=loopRole.getRoleName()%>
-									</label>
-									<%}%>
-								</div>
-							<%}%>
+									<div class="checkbox checkbox-info">
+										<label>
+											<input type="checkbox" name="roleIds" class="styled"  id="roleId_<%=loopRole.getId()%>" value="<%=loopRole.getId()%>" <%=userRoles!=null&&userRoles.contains(loopRole)?"checked='checked'":""%>/>
+											<%=loopRole.getRoleName()%>
+										</label>
+									</div>
+								<%}
+                               }%>
 							</div>
 						</div>
 						
