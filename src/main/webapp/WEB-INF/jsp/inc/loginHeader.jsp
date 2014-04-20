@@ -30,7 +30,7 @@
 			<span class="sr-only">Toggle navbar</span><i class="icon-grid3"></i>
 		</button>
 		<a class="navbar-brand" href="login_simple.html#"><img
-			src="/base-admin/images/logo.png" alt="Londinium"></a>
+			src="${pageContext.request.contextPath}/images/logo.png" alt="Londinium"></a>
 	</div>
 </div>
 <!-- /navbar --> 

@@ -43,7 +43,7 @@ public class WebAccessDecisionManager implements AccessDecisionManager {
                 }
             }
         }
-        System.out.println("-----------------------");
+//        System.out.println("-----------------------");
         throw new AccessDeniedException("No Right");
 	}
 

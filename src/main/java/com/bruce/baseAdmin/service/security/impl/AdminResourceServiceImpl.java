@@ -181,6 +181,7 @@ public class AdminResourceServiceImpl implements AdminResourceService{
 	private List<AdminResource> getAllNavResources() {
         AdminResourceCriteria criteria = new AdminResourceCriteria();
         criteria.createCriteria().andNavMenuEqualTo(AdminStatusEnum.OPEN.getStatus());
+        criteria.setOrderByClause("sort, id");
         return adminResourceMapper.selectByExample(criteria);
     }
 	
@@ -204,6 +205,7 @@ public class AdminResourceServiceImpl implements AdminResourceService{
 			resourceCriteria.createCriteria().andIdIn(resourceIdList)
 			.andNavMenuEqualTo(AdminStatusEnum.OPEN.getStatus())
 			.andStatusEqualTo(AdminStatusEnum.OPEN.getStatus());
+			criteria.setOrderByClause("sort, id");
 			return adminResourceMapper.selectByExample(resourceCriteria);
 		}
 		return null;

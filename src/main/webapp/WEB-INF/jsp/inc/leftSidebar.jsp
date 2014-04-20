@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.bruce.baseAdmin.bean.security.AdminResource"%>
@@ -44,10 +45,10 @@
 	<div class="sidebar-content">
 
 		<div class="user-menu dropdown">
-			<a href="#"><img src="/base-admin/images/demo/users/default_avatar.jpg" 
+			<a href="#"><img src="${pageContext.request.contextPath}/images/demo/users/default_avatar.jpg" 
 				alt="">
 			<div class="user-info">
-					Madison Gartner <span>Web Developer</span>
+					<sec:authentication property="name" /> <span>管理员</span>
 				</div></a>
 		</div>
 

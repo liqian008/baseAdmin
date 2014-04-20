@@ -20,7 +20,7 @@ public class WebDefaultInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 	        HttpServletResponse response, Object handler) throws Exception {
-		System.out.println("=====WebDefaultInterceptor preHandle=========");
+//		System.out.println("=====WebDefaultInterceptor preHandle=========");
 	    return super.preHandle(request, response, handler);
 	}
 	
@@ -28,7 +28,7 @@ public class WebDefaultInterceptor extends HandlerInterceptorAdapter {
 	public void postHandle(HttpServletRequest request,
 	        HttpServletResponse response, Object handler,
 	        ModelAndView modelAndView) throws Exception {
-	    System.out.println("=====WebDefaultInterceptor postHandler=========");
+//	    System.out.println("=====WebDefaultInterceptor postHandler=========");
 	    super.postHandle(request, response, handler, modelAndView);
 	}
 	
@@ -36,7 +36,7 @@ public class WebDefaultInterceptor extends HandlerInterceptorAdapter {
 	public void afterCompletion(HttpServletRequest request,
 	        HttpServletResponse response, Object handler, Exception ex)
 	        throws Exception {
-	    System.out.println("=====WebDefaultInterceptor afterCompletion=========");
+//	    System.out.println("=====WebDefaultInterceptor afterCompletion=========");
 	    super.afterCompletion(request, response, handler, ex);
 	}
 	
