@@ -152,7 +152,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- @hibernate -->
+		<!-- @hibernate 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
@@ -160,6 +160,7 @@
 			<type>jar</type>
 			<scope>compile</scope>
 		</dependency>
+		-->
 
 		<!-- Servlet -->
 		<dependency>

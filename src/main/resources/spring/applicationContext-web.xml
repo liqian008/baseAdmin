@@ -14,7 +14,9 @@
 	<context:annotation-config />
 
 	<context:component-scan base-package="com.bruce"></context:component-scan>
-
+	
+	<aop:aspectj-autoproxy />
+	
 	<!-- 使用国际化消息 -->  
    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">   
      <property name="basename" value="conf/messages"/>  
