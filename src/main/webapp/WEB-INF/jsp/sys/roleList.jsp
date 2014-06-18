@@ -14,15 +14,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Geekway微信管理平台</title>
+<title>管理平台</title>
 <link href="${pageContext.request.contextPath}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/londinium-theme.min.css" rel="stylesheet"
 	type="text/css">
 <link href="${pageContext.request.contextPath}/css/styles.min.css" rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/icons.min.css" rel="stylesheet" type="text/css">
-<link
-	href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=latin,cyrillic-ext"
-	rel="stylesheet" type="text/css">
+
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery/1.10.2/jquery-ui.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/plugins/charts/sparkline.min.js"></script>
@@ -97,9 +95,10 @@
 
 			<div class="callout callout-info fade in">
 				<button type="button" class="close" data-dismiss="alert">×</button>
-				<h5>Wide left sidebar layout</h5>
-				<p>Page layout with left aligned wide sidebar, with right
-					aligned icons and 4 level navigation.</p>
+				<h5>功能介绍</h5>
+				<p>
+					1、可用角色列表<br/>
+				</p>
 			</div>
 
 			<!-- Table view -->

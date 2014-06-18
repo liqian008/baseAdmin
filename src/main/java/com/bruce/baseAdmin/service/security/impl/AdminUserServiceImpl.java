@@ -58,6 +58,18 @@ public class AdminUserServiceImpl implements AdminUserService{
 		List<AdminUser> adminUserList =  adminUserMapper.selectByExample(criteria);
 		return adminUserList!=null&&adminUserList.size()==1?adminUserList.get(0):null;
 	}
+	
+	@Override
+	public int changeUserPassword(int userId, String encryptOldPassword,
+			String encryptNewPassword) {
+		AdminUser adminUser = new AdminUser();
+		adminUser.setPassword(encryptNewPassword);
+		
+		AdminUserCriteria criteria = new AdminUserCriteria();
+		criteria.createCriteria().andIdEqualTo(userId).andPasswordEqualTo(encryptOldPassword);
+		return adminUserMapper.updateByExampleSelective(adminUser, criteria);
+	}
+	
 
 
 	@Override
@@ -80,5 +92,6 @@ public class AdminUserServiceImpl implements AdminUserService{
 		criteria.createCriteria().andUserIdEqualTo(userId);
 		return adminUserRoleMapper.deleteByExample(criteria);
 	}
+
 	
 }

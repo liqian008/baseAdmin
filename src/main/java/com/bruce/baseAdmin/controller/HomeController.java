@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +33,8 @@ public class HomeController extends BaseController{
 	private AdminUserService adminUserService;
 	@Autowired
 	private AdminResourceService adminResourceService;
+	@Autowired
+	private PasswordEncoder pwEncoder;
 	
 	@RequestMapping(value = {"/", "/index", "/welcome"})
     public String index(Model model,HttpServletRequest request,HttpServletResponse response){
@@ -72,6 +75,51 @@ public class HomeController extends BaseController{
 		AdminUser adminUser = adminUserService.loadById(userId);
 		model.addAttribute("adminUser", adminUser);
 		return "home/profile";
+	}
+	
+	@RequestMapping("/passwd")
+	public String passwd(Model model, HttpServletRequest request) {
+		String servletPath = request.getRequestURI();
+		model.addAttribute("servletPath", servletPath);
+		
+		WebUserDetails userInfo = this.getUserInfo();
+		int userId = userInfo.getUserId();
+		
+		AdminUser adminUser = adminUserService.loadById(userId);
+		model.addAttribute("adminUser", adminUser);
+		return "home/passwd";
+	}
+	
+	@RequestMapping(value="/changePasswd", method=RequestMethod.POST)
+	public String changePasswd(Model model, HttpServletRequest request, String oldPassword, String newPassword, String rePassword) {
+		String servletPath = request.getRequestURI();
+		model.addAttribute("servletPath", servletPath);
+		
+		//检查newPassword和rePassword
+		if(StringUtils.isBlank(oldPassword)||StringUtils.isBlank(newPassword)||StringUtils.isBlank(rePassword)){
+			//密码不能为空
+			request.setAttribute("message", "密码均不能为空");
+			return "forward:/home/operationResult";
+		}else if(StringUtils.isBlank(newPassword)||StringUtils.isBlank(rePassword)){
+			//新密码与确认密码必须一致
+			request.setAttribute("message", "新密码与确认密码必须一致");
+			return "forward:/home/operationResult";
+		}
+		
+		WebUserDetails userInfo = this.getUserInfo();
+		int userId = userInfo.getUserId();
+		
+		AdminUser adminUser = adminUserService.loadById(userId);
+		
+		if(adminUser!=null){
+			int result = adminUserService.changeUserPassword(userId, pwEncoder.encode(oldPassword), pwEncoder.encode(newPassword));
+			if(result>0){
+				model.addAttribute("redirectUrl", "./index");
+				return "forward:/home/operationRedirect";
+			}
+		}
+		request.setAttribute("message", "修改密码失败");
+		return "forward:/home/operationResult";
 	}
 	
 	

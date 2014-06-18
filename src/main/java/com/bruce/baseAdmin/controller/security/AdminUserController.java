@@ -118,19 +118,6 @@ public class AdminUserController extends BaseController {
 	}
 	
 	
-	@RequestMapping("/changePwd")
-	public String changePwd(Model model, HttpServletRequest request) {
-		String servletPath = request.getRequestURI();
-		model.addAttribute("servletPath", servletPath);
-		
-		WebUserDetails userInfo = this.getUserInfo();
-		int userId = userInfo.getUserId();
-		
-		AdminUser adminUser = adminUserService.loadById(userId);
-		model.addAttribute("adminUser", adminUser);
-		return "sys/pwdEdit";
-	}
-		
 	@RequestMapping("/userRoleSet")
 	public String userRoleSet(Model model,int userId, HttpServletRequest request) {
 		String servletPath = request.getRequestURI();

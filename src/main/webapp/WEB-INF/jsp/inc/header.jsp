@@ -32,6 +32,8 @@
 		<ul class="dropdown-menu dropdown-menu-right icons-right">
 				<li><a href="${pageContext.request.contextPath}/home/profile"><i class="icon-user"></i>
 						个人资料</a></li>
+				<li><a href="${pageContext.request.contextPath}/home/passwd"><i class="icon-user"></i>
+						修改密码</a></li>
 				<li><a href="${pageContext.request.contextPath}/logout"><i class="icon-exit"></i>
 						注销</a></li>
 			</ul></li>

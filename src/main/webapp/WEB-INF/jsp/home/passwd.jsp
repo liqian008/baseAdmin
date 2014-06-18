@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.bruce.baseAdmin.bean.security.AdminUser"%>
+
 
 
 <!DOCTYPE html>
@@ -51,48 +56,125 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/js/application.js"></script>
 </head>
-<body class="full-width page-condensed">
-	<jsp:include page="./inc/loginHeader.jsp"></jsp:include>
-	
-	<!-- Login wrapper -->
-	<div class="login-wrapper">
-		<form action="./doLogin" class="row-fluid" method="post">
-			<div class="popup-header">
-				<span class="text-semibold">用户登录</span>
+<body class="sidebar-wide">
+
+	<jsp:include page="../inc/header.jsp"></jsp:include>
+
+	<!-- Page container -->
+	<div class="page-container">
+
+		<jsp:include page="../inc/leftSidebar.jsp"></jsp:include>
+
+		<!-- Page content -->
+		<div class="page-content">
+			<!-- Page header -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>
+						修改密码
+						<!-- 
+						<small>Headings, lists, code, pre etc. </small>
+						 -->
+					</h3>
+				</div>
+			</div>
+			<!-- /page header -->
+			<!-- Breadcrumbs line -->
+			<div class="breadcrumb-line">
+				<ul class="breadcrumb">
+					<li><a href="index.html">首页</a></li>
+					<li class="active">修改密码</li>
+				</ul>
+				<div class="visible-xs breadcrumb-toggle">
+					<a class="btn btn-link btn-lg btn-icon" data-toggle="collapse"
+						data-target=".breadcrumb-buttons"><i class="icon-menu2"></i></a>
+				</div>
+			</div>
+			<!-- /breadcrumbs line -->
+			
+			<div class="callout callout-info fade in">
+				<button type="button" class="close" data-dismiss="alert">×</button>
+				<h5>功能介绍</h5>
+				<p>
+					1、修改密码<br/>
+				</p>
+			</div>
+			
+			<%
+			AdminUser adminUser = (AdminUser)request.getAttribute("adminUser");
+			%>
+
+			<form action="./changePasswd" class="form-horizontal form-bordered" role="form" method="post" >				
 				
-			</div>
-			<div class="well">
-				<div class="form-group has-feedback">
-					<label>用户名</label><input type="text" class="form-control" name="userName"
-						placeholder="username"><i
-						class="icon-users form-control-feedback"></i>
-				</div>
-				<div class="form-group has-feedback">
-					<label>密 码</label>
-					<input type="password" class="form-control" name="passWord"
-						placeholder="password"><i
-						class="icon-lock form-control-feedback"></i>
-				</div>
-				<div class="row form-actions">
-					<div class="col-xs-6">
-					<!-- 
-						<div class="checkbox checkbox-success">
-							<label><input type="checkbox" class="styled">Remember
-								me</label>
+				<!-- Basic inputs -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h6 class="panel-title">
+							<i class="icon-bubble4"></i>修改密码
+						</h6>
+					</div>
+					<div class="panel-body">
+						<div class="form-group">
+							<label class="col-sm-2 control-label text-right">用户名:
+							</label>
+							<div class="col-sm-4">
+								<label class="control-label">
+									<%=adminUser.getUsername()%>
+								</label>
+							</div>
 						</div>
-					-->
-					</div>
-					<div class="col-xs-6">
-						<button type="submit" class="btn btn-warning pull-right">
-							<i class="icon-menu2"></i>登 录
-						</button>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label text-right">昵 称:
+							</label>
+							<div class="col-sm-4">
+								<label class="control-label">
+									<%=adminUser.getNickname()%>
+								</label>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label text-right">旧密码: <span class="mandatory">*</span>
+							</label>
+							<div class="col-sm-3">
+								<input type="password" class="form-control" name="oldPassword" id="oldPassword"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label text-right">新密码: <span class="mandatory">*</span>
+							</label>
+							<div class="col-sm-3">
+								<input type="password" class="form-control" name="newPassword" id="newPassword"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<label class="col-sm-2 control-label text-right">确认密码: <span class="mandatory">*</span>
+							</label>
+							<div class="col-sm-3">
+								<input type="password" class="form-control" name="rePassword" id="rePassword"/>
+							</div>
+						</div>
+						
+						<div class="form-actions text-right">
+							<input type="reset" value="重 置" class="btn btn-danger">
+							<input type="submit" value="提 交" class="btn btn-primary">
+						</div>
+						
 					</div>
 				</div>
-			</div>
-		</form>
+				
+			</form>
+
+
+
+			<jsp:include page="../inc/footer.jsp"></jsp:include>
+
+		</div>
+		<!-- /page content -->
 	</div>
-	<!-- /login wrapper -->
-	
-	<jsp:include page="./inc/footer.jsp"></jsp:include>
+	<!-- /page container -->
 </body>
 </html>
