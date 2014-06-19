@@ -29,8 +29,8 @@
 			data-target=".navbar-right">
 			<span class="sr-only">Toggle navbar</span><i class="icon-grid3"></i>
 		</button>
-		<a class="navbar-brand" href="login_simple.html#"><img
-			src="${pageContext.request.contextPath}/images/logo.png" alt="Londinium"></a>
+		<%-- <a class="navbar-brand" href="login_simple.html#"><img
+			src="${pageContext.request.contextPath}/images/logo.png" alt="Londinium"></a> --%>
 	</div>
 </div>
 <!-- /navbar --> 
