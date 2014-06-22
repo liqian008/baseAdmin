@@ -91,12 +91,12 @@ public class HomeController extends BaseController{
 	}
 	
 	@RequestMapping(value="/changePasswd", method=RequestMethod.POST)
-	public String changePasswd(Model model, HttpServletRequest request, String oldPassword, String newPassword, String rePassword) {
+	public String changePasswd(Model model, HttpServletRequest request, String newPassword, String rePassword) {
 		String servletPath = request.getRequestURI();
 		model.addAttribute("servletPath", servletPath);
 		
 		//检查newPassword和rePassword
-		if(StringUtils.isBlank(oldPassword)||StringUtils.isBlank(newPassword)||StringUtils.isBlank(rePassword)){
+		if(StringUtils.isBlank(newPassword)||StringUtils.isBlank(rePassword)){
 			//密码不能为空
 			request.setAttribute("message", "密码均不能为空");
 			return "forward:/home/operationResult";
@@ -112,7 +112,7 @@ public class HomeController extends BaseController{
 		AdminUser adminUser = adminUserService.loadById(userId);
 		
 		if(adminUser!=null){
-			int result = adminUserService.changeUserPassword(userId, pwEncoder.encode(oldPassword), pwEncoder.encode(newPassword));
+			int result = adminUserService.changeUserPassword(userId, pwEncoder.encode(newPassword));
 			if(result>0){
 				model.addAttribute("redirectUrl", "./index");
 				return "forward:/home/operationRedirect";

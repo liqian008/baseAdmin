@@ -60,13 +60,12 @@ public class AdminUserServiceImpl implements AdminUserService{
 	}
 	
 	@Override
-	public int changeUserPassword(int userId, String encryptOldPassword,
-			String encryptNewPassword) {
+	public int changeUserPassword(int userId, String encryptNewPassword) {
 		AdminUser adminUser = new AdminUser();
 		adminUser.setPassword(encryptNewPassword);
 		
 		AdminUserCriteria criteria = new AdminUserCriteria();
-		criteria.createCriteria().andIdEqualTo(userId).andPasswordEqualTo(encryptOldPassword);
+		criteria.createCriteria().andIdEqualTo(userId);
 		return adminUserMapper.updateByExampleSelective(adminUser, criteria);
 	}
 	

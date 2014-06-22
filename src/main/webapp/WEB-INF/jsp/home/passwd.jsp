@@ -135,14 +135,6 @@
 						</div>
 						
 						<div class="form-group">
-							<label class="col-sm-2 control-label text-right">旧密码: <span class="mandatory">*</span>
-							</label>
-							<div class="col-sm-3">
-								<input type="password" class="form-control" name="oldPassword" id="oldPassword"/>
-							</div>
-						</div>
-						
-						<div class="form-group">
 							<label class="col-sm-2 control-label text-right">新密码: <span class="mandatory">*</span>
 							</label>
 							<div class="col-sm-3">
